@@ -176,10 +176,31 @@ else
   echo "SKIP: prose lint not installed on this machine (voice-lint.mjs); prose was not checked."
 fi
 
+# --- 9. The shape gate still discriminates -----------------------------------
+# The pre-commit hook regenerates docs/images/memory-shape.svg and HARD STOPS the
+# commit if the generator refuses rather than leaks. That refusal is the only
+# thing standing between the private network and a public picture of it, and for
+# its whole life it sat below the hook's `exit 0` and never executed once. Same
+# bug as check 7's own 2026-07-28 note, in a different file: a gate placed after
+# an exit is a comment.
+#
+# So the guard now has a suite that watches it fail on purpose, and the suite
+# runs here. It builds throwaway repos in a temp dir; it never reads the real
+# memory network.
+SHAPE_TEST=".githooks/tests/shape-gate.test.sh"
+if [ -f "$SHAPE_TEST" ]; then
+  if bash "$SHAPE_TEST" > /tmp/shape-gate.out 2>&1; then
+    tail -n 1 /tmp/shape-gate.out
+  else
+    say_fail "the shape gate no longer discriminates (bash ${SHAPE_TEST}):
+$(sed 's/^/  /' /tmp/shape-gate.out)"
+  fi
+fi
+
 echo ""
 if [ "$fail" -ne 0 ]; then
   echo "RELEASE CHECK FAILED. Fix the items above before anything ships."
   exit 1
 fi
-echo "Release check clean: no leaks, no dashes, prompt in sync, links resolve, feed fresh and pointing at real pages, pillars counted, prose linted."
+echo "Release check clean: no leaks, no dashes, prompt in sync, links resolve, feed fresh and pointing at real pages, pillars counted, prose linted, shape gate still fails on purpose."
 exit 0
