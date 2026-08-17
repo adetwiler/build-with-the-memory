@@ -16,7 +16,7 @@ It is a prompt, not a program. Your own AI coding agent runs it.
 
    ```
    git clone https://github.com/adetwiler/build-with-the-memory.git
-   cd build-with-a-memory
+   cd build-with-the-memory
    ```
 
 2. Open your agent (Claude Code, Cursor, whatever you use) in this folder and
