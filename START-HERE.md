@@ -15,7 +15,7 @@ It is a prompt, not a program. Your own AI coding agent runs it.
 1. Get this repo onto your machine (clone it, or download the zip):
 
    ```
-   git clone https://github.com/adetwiler/build-with-a-memory.git
+   git clone https://github.com/adetwiler/build-with-the-memory.git
    cd build-with-a-memory
    ```
 

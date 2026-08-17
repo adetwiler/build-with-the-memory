@@ -24,7 +24,7 @@ now just gets assumed. Decisions are durable, so they get written down. State is
 ambient, so nobody writes it down.
 
 So there is a fourteenth pillar now:
-[State, not just decisions](https://github.com/adetwiler/build-with-a-memory/blob/main/method/14-state-not-just-decisions.md).
+[State, not just decisions](https://github.com/adetwiler/build-with-the-memory/blob/main/method/14-state-not-just-decisions.md).
 The short version: one `NOW.md` at the top of the network, rewritten instead
 of appended, every line dated, stale lines deleted on sight. LIVE split from
 DRAFT for anything the world can see. Start dates on anything that collects.
