@@ -44,7 +44,7 @@ And my own mirror followed symlinks. A repo I borrowed could point a file at
 anything on my disk and my indexer would read it. Caught by writing tests that
 attack the tool instead of confirming it.
 
-New pillar: [`method/13-borrowed-memory.md`](https://github.com/adetwiler/build-with-a-memory/blob/main/method/13-borrowed-memory.md).
-The tooling and both test suites are in [`tools/`](https://github.com/adetwiler/build-with-a-memory/tree/main/tools).
+New pillar: [`method/13-borrowed-memory.md`](https://github.com/adetwiler/build-with-the-memory/blob/main/method/13-borrowed-memory.md).
+The tooling and both test suites are in [`tools/`](https://github.com/adetwiler/build-with-the-memory/tree/main/tools).
 The longer version, with the numbers and the bugs, is
 [on my site](https://andrewdetwiler.com/blog/letting-agents-read-other-repos).
