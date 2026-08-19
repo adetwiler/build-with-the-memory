@@ -31,3 +31,9 @@ memory-graph/
 # Python bytecode (my py_compile check left these once)
 __pycache__/
 *.pyc
+
+# Agent worktrees. This repo is public and every commit runs a leak gate over
+# what is staged, so a whole second checkout sitting untracked in the tree is one
+# `git add .` away from being published. Ignoring it keeps `git status` honest too:
+# an untracked directory here reads as real work when it is only scratch space.
+.claude-worktrees/
